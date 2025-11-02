@@ -35,7 +35,7 @@ Built using **Core PHP**, **MySQL**, and **Bootstrap**, this project is lightwei
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/<your-username>/newsportal.git
+git clone https://github.com/abhishek989618-dev/newsportal-php.git
 cd newsportal
 
 2️⃣ Install dependencies
@@ -110,8 +110,8 @@ Use .env variables for all sensitive credentials.
 
 🧑‍💻 Author
 
-Abhishek Kumar
-📧 abhishek.wsckkr@gmail.com
+Abhishek
+📧 abhishek.9034251@gmail.com
 
 🔗 LinkedIn
 
