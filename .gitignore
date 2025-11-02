@@ -1,0 +1,32 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment and config (secrets)
+.env
+.env.local
+.env.*.local
+config.php
+
+# Composer vendor (recommended to not push)
+vendor/
+composer.lock
+
+# Uploaded media (do not include heavy assets)
+uploads/
+uploads/*
+screenshots/raw/
+
+# IDEs & editors
+.vscode/
+.idea/
+
+# Logs, caches, temp files
+*.log
+cache/
+tmp/
+*.tmp
+
+# Misc
+node_modules/
+*.sql.bak

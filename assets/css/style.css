@@ -1,0 +1,10 @@
+.brand-color{
+    color: #ffffff;
+    background-color: #122d4b;
+
+}
+
+.brand-color:hover{
+    color: #ffffff;
+    background-color: #0f2237;
+}

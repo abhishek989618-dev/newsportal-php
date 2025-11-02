@@ -1,0 +1,51 @@
+<?php
+require '../session.php';
+require '../config.php';
+require '../check_permission.php';
+
+// ✅ Enforce permission: create on types
+if (!has_permission($conn, $_SESSION['role_id'], 'types', 'create')) {
+    die("❌ Access Denied: You do not have permission to add types.");
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = trim($_POST['name']);
+
+    if ($name) {
+        $stmt = $conn->prepare("INSERT INTO types (name) VALUES (?)");
+        $stmt->bind_param("s", $name);
+        $stmt->execute();
+        header("Location: index.php");
+        exit;
+    } else {
+        echo "<p style='color:red;'>type name is required.</p>";
+    }
+}
+?>
+
+<?php include '../includes/sidebar.php'?>
+<div class="main">
+    <?php include '../includes/navbar.php'; ?>
+    <div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow border-dark">
+        <div class="card-header bg-dark text-white">
+          <h5 class="mb-0">📁 Add New type</h5>
+        </div>
+        <div class="card-body">
+          <form method="post" action="">
+            <div class="mb-3">
+              <label for="name" class="form-label">type Name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Enter type name" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">➕ Save type</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<?php include '../includes/footer.php'; ?>
